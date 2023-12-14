@@ -1,12 +1,11 @@
 import { useState } from 'react';
 import './App.css'
 import Icons from './components/atoms/icons/Icons'
-import TaskModal from './components/molecules/modal/taskModal/TaskModal';
-import InboxModal from './components/molecules/modal/inboxModal/InboxModal';
+import TaskModal from './components/organisms/taskModal/TaskModal';
+import InboxModal from './components/organisms/inboxModal/InboxModal';
 
 function App() {
   const [menuActive, setMenuActive] = useState(false);
-  // const [popupActive, setPopupActive] = useState(false);
   const [activePosition, setActivePosition] = useState(0);
 
   const menuHandleClick = () => {
@@ -20,8 +19,6 @@ function App() {
     setMenuActive(!menuActive);
   }
 
-  console.log('menuActive: ' + menuActive);
-  console.log('activePosition: ' + activePosition);
   return (
     <>
       <div className='bg-[#0F8A69] '>

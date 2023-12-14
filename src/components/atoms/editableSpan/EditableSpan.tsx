@@ -1,3 +1,5 @@
+import { faPencil } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useEffect, useRef, useState } from 'react'
 import ReactTextareaAutosize from 'react-textarea-autosize'
 
@@ -12,9 +14,8 @@ type Props = {
 
 const EditableSpan = (props: Props) => {
     const [isInputShowing, setIsInputShowing] = useState(false)
-    // const [value, onChange] = useState('2022-12-12')
     const inputRef = useRef<HTMLInputElement>(null)
-    const textAreaRef = useRef<HTMLTextAreaElement>(null);
+    const textAreaRef = useRef<HTMLTextAreaElement>(null)
     const showInput = () => {
         setIsInputShowing(true);
     }
@@ -29,16 +30,20 @@ const EditableSpan = (props: Props) => {
     useEffect(() => {
         if (isInputShowing) {
             inputRef.current?.focus();
-            textAreaRef.current?.focus();
+            textAreaRef?.current?.focus();
         }
     }, [isInputShowing])
 
     return (
         <>
-            <span className={(isInputShowing ? 'hidden ' : '') + 'cursor-pointer ' + props.className} onClick={showInput}>
+            <span className={(isInputShowing ? 'hidden ' : '') + (props.name === 'title' ? 'max-w-[300px] block ' : '') + 'cursor-pointer relative ' + props.className} onClick={showInput}>
                 {(props.value && props.type === 'date' ? formatDate(props.value)
-                : props.value ? props.value
-                : props.placeholder || '')}
+                    : props.value ? props.value
+                        : props.placeholder || '')}
+
+                {props.name === 'desc' ? (
+                    <FontAwesomeIcon icon={faPencil} className='mt-1 mr-4 absolute -left-8 top-0 text-transparent' />)
+                    : ''}
             </span>
             {props.type === 'date' ? (
                 <input
@@ -54,7 +59,7 @@ const EditableSpan = (props: Props) => {
             ) : (
                 <ReactTextareaAutosize
                     ref={textAreaRef}
-                    className={(isInputShowing ? '' : 'hidden ') + 'w-full ' + props.className}
+                    className={(isInputShowing ? '' : 'hidden ') + (props.name === 'title' ? 'w-[300px] block ' : 'w-full ') + props.className}
                     name={props.name}
                     value={props.value}
                     onChange={props.onChange}

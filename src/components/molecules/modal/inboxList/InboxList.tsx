@@ -2,10 +2,8 @@ import UserIcons from '../../../atoms/userIcons/UserIcons'
 
 type Chat = {
     id: number,
-    groupName: string,
-    date: string,
-    lastSender: string,
-    message: string,
+    title: string,
+    body: string,
 }
 
 type Props = {
@@ -19,11 +17,13 @@ const InboxList = (props: Props) => {
         <UserIcons />
         <div className='w-full cursor-pointer' onClick={props.onClick}>
             <div className='flex w-full'>
-                <span className='text-[#2f80ed] font-bold w-[350px]'>{props.chat.groupName}</span>
-                <span className='ms-8'>{props.chat.date} 09:45</span>
+                <span className='text-[#2f80ed] font-bold w-[350px]'>{props.chat.title}</span>
+                <span className='ms-8'>
+                    <span className='mr-2'>14/12/2023</span> 09:45
+                </span>
             </div>
-            <p>{props.chat.lastSender}</p>
-            <p className='whitespace-nowrap overflow-hidden text-ellipsis w-[300px]'>{props.chat.message}</p>
+            <p>Cameron Phillips :</p>
+            <p className='whitespace-nowrap overflow-hidden text-ellipsis w-[300px]'>{props.chat.body}</p>
         </div>
     </li>
   )
