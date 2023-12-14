@@ -1,6 +1,6 @@
 import TaskList from '../taskList/TaskList';
 
-type Props = {}
+// type Props = {}
 const tasks = [
     {
         id: 1,
@@ -25,7 +25,7 @@ const tasks = [
     }
 ];
 
-const TaskModal = (props: Props) => {
+const TaskModal = () => {
     return (
         <div className='bg-white w-[650px] px-4 py-3 rounded text-xs'>
             <div className='flex justify-between mb-3'>

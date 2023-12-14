@@ -1,11 +1,9 @@
-import { icon } from '@fortawesome/fontawesome-svg-core/import.macro'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import React from 'react'
 
-type Props = {}
+// type Props = {}
 
-const UserIcons = (props: Props) => {
+const UserIcons = () => {
     return (
         <div className='relative pr-10'>
             <span

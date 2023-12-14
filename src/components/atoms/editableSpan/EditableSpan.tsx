@@ -12,7 +12,7 @@ type Props = {
 
 const EditableSpan = (props: Props) => {
     const [isInputShowing, setIsInputShowing] = useState(false)
-    const [value, onChange] = useState('2022-12-12')
+    // const [value, onChange] = useState('2022-12-12')
     const inputRef = useRef<HTMLInputElement>(null)
     const textAreaRef = useRef<HTMLTextAreaElement>(null);
     const showInput = () => {

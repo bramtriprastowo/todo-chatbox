@@ -1,4 +1,3 @@
-import React, { useState } from 'react'
 import thunderIcon from '../../../assets/thunder.png'
 import taskIcon from '../../../assets/task.png'
 import taskWhiteIcon from '../../../assets/task-white.png'

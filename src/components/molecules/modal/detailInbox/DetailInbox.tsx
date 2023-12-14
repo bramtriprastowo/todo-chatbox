@@ -1,6 +1,6 @@
 import { faArrowLeft, faXmark } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import React, { Dispatch, SetStateAction } from 'react'
+import { Dispatch, SetStateAction } from 'react'
 import ChatBox from '../chatBox/ChatBox'
 
 type Props = {

@@ -1,4 +1,3 @@
-import React from 'react'
 import UserIcons from '../../../atoms/userIcons/UserIcons'
 
 type Chat = {

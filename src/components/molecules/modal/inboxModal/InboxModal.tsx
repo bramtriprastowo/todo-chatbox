@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import TaskList from '../taskList/TaskList';
 import InboxList from '../inboxList/InboxList';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
